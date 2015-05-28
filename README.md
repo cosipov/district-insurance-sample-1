@@ -5,6 +5,8 @@ Make sure you have an IBM Bluemix account. You can get one here: https://apps.ad
 
 The following instructions will help you run the demo in a [Docker Machine](https://github.com/osipov/district-insurance-sample/blob/master/README.md#option-1-local-docker-machine). You can also use [IBM DevOps](https://github.com/osipov/district-insurance-sample#option-3-ibm-devops-delivery-pipeline) or an interactive deployment [directly to IBM Container Service from your command line](https://github.com/osipov/district-insurance-sample#option-2-deploy-to-the-ibm-container-service-from-a-command-line). 
 
+If you already have access to a running version of the application, you can skip to the demonstration scenario as described in the [Demo](https://github.com/osipov/district-insurance-sample/blob/master/README.md#demo) section.
+
 Run in a Docker Machine
 --------------------
 
@@ -114,6 +116,9 @@ Click on Add Stage again (you can name it Deploy), and ensure that Input Type is
 
 To start the build and deploy process, click on the Run Stage button shown as a play icon on the upper right of the first, Deploy stage. You can monitor the progress by clicking on the View logs and history links.
 
+Once the build and deploy stages finish successfully, you can access the application by clicking on the IP address shown in the Last Execution Result of the Deploy stage.
+
+Login using bob/secret as the credentials.
 
 Demo
 ----

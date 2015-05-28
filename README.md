@@ -5,7 +5,7 @@ Make sure you have an IBM Bluemix account. You can get one here: https://apps.ad
 
 The following instructions will help you run the demo in a [Docker Machine](https://github.com/osipov/district-insurance-sample/blob/master/README.md#option-1-local-docker-machine). You can also use [IBM DevOps](https://github.com/osipov/district-insurance-sample#option-3-ibm-devops-delivery-pipeline) or an interactive deployment [directly to IBM Container Service from your command line](https://github.com/osipov/district-insurance-sample#option-2-deploy-to-the-ibm-container-service-from-a-command-line). 
 
-Option 1. Docker Machine
+Run in a Docker Machine
 --------------------
 
 If you don't have Docker Machine installed, you can find out how to install one here: https://docs.docker.com/machine/#installation
@@ -49,7 +49,7 @@ where you can login using bob / secret
 
 The scenario is described in more detail in the [Demo](https://github.com/osipov/district-insurance-sample/blob/master/README.md#demo) section.
 
-Option 2. Deploy to the IBM Container Service from a command line
+Deploy to the IBM Container Service from a command line
 -------------------------------------------------
 *NOTE* These steps will only work on Linux or OS X. If you are running Windows, you should use the Docker Machine option described earlier.
 
@@ -77,14 +77,42 @@ When prompted by the cf login command use your Bluemix credentials to login. Spe
 
 The release process will remind you to make sure there are no conflicting Container Service instances in your organization. It will also deploy a NOOP app to integrate the demo application with the Tradeoff Analytics service.
 
-Once the Container Service is created, follow the instructions to obtain the Container Service API key and enter it when prompted. Note the IP address provided by the Container Service and enter it when prompted. **WARNING**: it is likely that this step will fail due to high demand for the Container Service.
+You will be prompted to provide the Container Service image registry URL.
 
 Once the IP address is provided, use it to login to http://<ip> with bob / secret as credentials.
 
-
-Option 3. IBM DevOps Delivery Pipeline
+Deploy with the IBM DevOps Delivery Pipeline
 --------------------------------------
 
+After logging into your github account, open the following repository and fork it into your own account
+
+	https://github.com/osipov/district-insurance-sample
+
+Note the forked URL of your github repository.
+
+Open the Settings menu (gear icon on the upper right) on github.com and navigate to the Personal access token section from the left hand menu. 
+
+Generate a new personal access token, keeping the scopes set and default, and name the token ```IBM DevOps```. Make sure you copy the token after generating it because you'll need it for integration with IBM DevOps.
+
+Use your Bluemix credentials to login to https://hub.jazz.net/ and click on Create a Project.
+
+Name your project (e.g. district-insurance-sample) and click on Link to an existing repository. Authorize Bluemix to access your github account and choose your fork of the repository as the linked repository.
+
+Make sure that the option to make this a Bluemix project is checked off and you have correctly specified the region, organization, and space where you would like to deploy this project.
+
+Create the project using the Create button at the bottom of the page.
+
+Once the page changes and confirms that you have successfully created the project, click on Build & Deploy on the upper right of the page. 
+
+In the Build & Deploy pipeline section of the page, click on Add Stage (you can name the stage Build), make sure that your forked github repository is selected and paste your github personal access token. By default, the branch should be master. 
+
+Choose Jobs in the stage configuration, click Add Job, and select Build job type. The Builder type must be IBM Container Service. Ensure that the organization and space are selected correctly, specify district-insurance-sample as the Image Name, and click Save.
+
+Click on Environment Properties of the stage and add a text property. The key should be IMAGE_NAME and the value can be set to district-insurance-sample.
+
+Click on Add Stage again (you can name it Deploy), and ensure that Input Type is set to Build Artifacts, Stage to your previous stage name (Build) and Job is set to Build. Select Jobs, click Add Job, and select Deploy as the job type. The deployer type must be set to IBM Container Service on Bluemix. Ensure that the organization and space are set correctly and change the name to district-insurance-sample. Click Save.
+
+To start the build and deploy process, click on the Run Stage button shown as a play icon on the upper right of the first, Deploy stage. You can monitor the progress by clicking on the View logs and history links.
 
 
 Demo

@@ -67,5 +67,5 @@
     "start": "node dist/server.js",
     "test": "grunt dist/test"    
   },
-  "main": "dist/server.js",  
+  "main": "dist/server.js"
 }

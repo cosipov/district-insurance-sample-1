@@ -44,6 +44,9 @@
     "js": "requirejs",
     "task": "grunt"
   },
++  "engines": {
++    "node": "0.10.38"
++  },  
   "repository": {
     "type": "git",
     "url": "https://github.com/osipov/district-insurance-sample.git"

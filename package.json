@@ -45,7 +45,7 @@
     "task": "grunt"
   },
   "engines": {
-    "node": "=>0.10.38"
+    "node": "=0.10.38"
   },  
   "repository": {
     "type": "git",

@@ -3,11 +3,13 @@ Setup
 
 Make sure you have an IBM Bluemix account. You can get one here: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html
 
+The easiest way to get started with the application is to click the following button
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/cosipov/district-insurance-sample-1.git)
 
-The following instructions will help you run the demo in a [Docker Machine](https://github.com/osipov/district-insurance-sample/blob/master/README.md#option-1-local-docker-machine). You can also use [IBM DevOps](https://github.com/osipov/district-insurance-sample#option-3-ibm-devops-delivery-pipeline) or an interactive deployment [directly to IBM Container Service from your command line](https://github.com/osipov/district-insurance-sample#option-2-deploy-to-the-ibm-container-service-from-a-command-line). 
-
 If you already have access to a running version of the application, you can skip to the demonstration scenario as described in the [Demo](https://github.com/osipov/district-insurance-sample/blob/master/README.md#demo) section.
+
+You can also run this demo in a [Docker Machine](https://github.com/osipov/district-insurance-sample/blob/master/README.md#option-1-local-docker-machine). If you are willing to do some configuration you can also use [IBM DevOps](https://github.com/osipov/district-insurance-sample#option-3-ibm-devops-delivery-pipeline) or do an interactive deployment [directly to IBM Container Service from your command line](https://github.com/osipov/district-insurance-sample#option-2-deploy-to-the-ibm-container-service-from-a-command-line). 
+
 
 Run in a Docker Machine
 --------------------

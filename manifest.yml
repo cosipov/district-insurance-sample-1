@@ -5,6 +5,6 @@ declared-services:
     plan: free
 applications:
 - name: district-insurance-sample
-  command: node dist/app.js
+  command: node dist/server.js
   services:
   - tradeoff_analytics_instance    
